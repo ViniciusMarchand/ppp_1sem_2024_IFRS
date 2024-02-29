@@ -1,17 +1,11 @@
 package personagens;
 
 public class Rei extends Personagem {
-    Rei(String nome) {
+    public Rei(String nome) {
         super(nome);
+        this.setPersonagem("Rei");
 
     }
 
-    private String personagem = "Rei";
 
-    public void verPersonagem() {
-
-        System.out.println(personagem);
-        System.out.println(getArma().toString());
-
-    }
 }

@@ -3,17 +3,19 @@ import armas.Espada;
 import armas.Faca;
 import armas.Machado;
 import personagens.Cavaleiro;
+import personagens.Rainha;
+import personagens.Rei;
 
 public class App {
     public static void main(String[] args) {
-        Cavaleiro cavaleiro = new Cavaleiro("Pedro");
+        Rei rainha = new Rei("Pedro");
         Faca faca = new Faca();
         Espada espada = new Espada();
         Arco arco = new Arco();
         Machado machado = new Machado();
-        cavaleiro.equipar(espada);
+        rainha.equipar(espada);
 
-        cavaleiro.verPersonagem();
-        cavaleiro.atacar();
+        rainha.verPersonagem();
+        rainha.atacar();
     }
 }
