@@ -16,7 +16,7 @@ public abstract class Exportacao {
 
     }
 
-    public void exportar() {
+    final public void exportar() {
         BufferedReader bufferedReader = lerCSV();
         formatarDado(bufferedReader);
         exportarComo(dados);
