@@ -27,6 +27,7 @@ public class App
         items.add(item2);
         
         Pedido pedido = Pedido.builder().id(1).vendedor(vendedor).cliente(cliente).items(items).build();      
+        System.out.println(pedido);
         System.out.println(pedido.getId());  
         System.out.println(pedido.getCliente());  
         System.out.println(pedido.getVendedor());  
