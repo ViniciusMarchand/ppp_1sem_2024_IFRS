@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link id="tema-link" rel="stylesheet" href="/css/{{tema}}.css">
+    <title>Singleton</title>
+</head>
+<body>
+    <div class="main-container">
+        <h1>{{linguagem.bemVindo}} {{nome}}!</h1>
+        <h1>{{linguagem.configuracao}}</h1>
+        <div class="main-block">
+            <button id="trocar-tema-botao">{{linguagem.trocarTema}}</button>
+            <button id="trocar-lingua">{{linguagem.trocarLingua}}</button>
+            <div>
+                <input type="text" id="nome" value="{{nome}}">
+                <button id="trocar-nome">{{linguagem.trocarNome}}</button>
+            </div>
+            <a href="/configuracao">{{linguagem.verConfiguracoesAplicadas}}</a>
+        </div>
+    </div>
+    <script>
+        document.getElementById('trocar-tema-botao').addEventListener('click', function() {
+
+        fetch('/toggle-tema')
+            .then(response => response.text())
+            .then(theme => {
+                location.reload();
+            })
+            .catch(error => console.error('Erro ao mudar o tema:', error));
+        });
+
+        document.getElementById('trocar-nome').addEventListener('click', function() {
+
+        fetch('/change-nome-usuario?nome=' + document.getElementById('nome').value)
+            .then(response => response.text())
+            .then(theme => {
+                location.reload();
+            })
+            .catch(error => console.error('Erro ao mudar o tema:', error));
+        });
+
+        document.getElementById('trocar-lingua').addEventListener('click', function() {
+
+        fetch('/change-lingua')
+            .then(response => response.text())
+            .then(theme => {
+            location.reload();
+        })
+        .catch(error => console.error('Erro ao mudar o tema:', error));
+});
+    </script>
+</body>
+</html>
